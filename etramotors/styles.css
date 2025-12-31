@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap');
+
+:root {
+    --primary-color: #4ade80; /* Light green/teal from the image buttons */
+    --text-color: #ffffff;
+    --bg-overlay: rgba(0, 0, 0, 0.7);
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --hover-bg: rgba(255, 255, 255, 0.2);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-image: url('images/bg.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-overlay);
+    z-index: -1;
+}
+
+.container {
+    width: 100%;
+    max-width: 480px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+/* Logo / Header Area */
+.profile-header {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.profile-logo {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: none;
+}
+
+.main-title {
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+}
+
+.description {
+    font-size: 1rem;
+    font-weight: 400;
+    opacity: 0.9;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+    max-width: 90%;
+    text-wrap: balance;
+}
+
+/* Social Icons */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.social-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 1.2rem;
+}
+
+.social-icon:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-3px);
+    border-color: var(--primary-color);
+    color: #000;
+}
+
+/* Link Buttons */
+.links-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.link-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 50px; /* Pill shape */
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.link-btn:hover {
+    background-color: var(--hover-bg);
+    transform: scale(1.02);
+    border-color: var(--primary-color);
+}
+
+.link-btn.primary {
+    background-color: #4ade80; /* Teal/Green color */
+    color: #000;
+    border: none;
+    font-weight: 700;
+}
+
+.link-btn.primary:hover {
+    background-color: #2dd4bf;
+    transform: scale(1.02);
+    box-shadow: 0 0 20px rgba(74, 222, 128, 0.4);
+}
+
+/* Footer */
+.footer {
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    opacity: 0.6;
+}
+
+.footer a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .logo-text {
+        font-size: 2rem;
+    }
+    .main-title {
+        font-size: 1.75rem;
+    }
+}
