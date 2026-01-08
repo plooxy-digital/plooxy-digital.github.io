@@ -49,7 +49,7 @@ body::before {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.65); /* Darkening for readability */
-    backdrop-filter: blur(8px); /* Glassmorphism effect */
+    backdrop-filter: blur(2px); /* Glassmorphism effect */
     z-index: -1;
 }
 
